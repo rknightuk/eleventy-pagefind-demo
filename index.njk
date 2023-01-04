@@ -1,0 +1,28 @@
+---
+title: home
+layout: base
+---
+
+<h1>Eleventy × PageFind Demo</h1>
+
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<style>
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --pagefind-ui-primary: #eeeeee;
+            --pagefind-ui-text: #eeeeee;
+            --pagefind-ui-background: #152028;
+            --pagefind-ui-border: #152028;
+            --pagefind-ui-tag: #152028;
+        }
+    }
+</style>
+<div id="search" class="search"></div>
+<script src="/_pagefind/pagefind-ui.js" onload="new PagefindUI({ element: '#search', showImages: false });"></script>
+
+<hr>
+<h2>Posts</h2>
+
+{%- for post in collections.posts %}
+    <h3><a href="{{ post.data.permalink }}">{{ post.data.title }}</a> {{ post.date.toDateString() }}</h3>
+{% endfor %}

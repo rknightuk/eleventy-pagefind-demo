@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+
+		<meta name="viewport" content="width=device-width" />
+		<meta name="Description" content="{{ title }}">
+
+		<meta name="generator" content="{{ eleventy.generator }}">
+
+		<title>{{ title }}</title>
+
+		<link rel="stylesheet" href="/assets/styles.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+		<meta property="og:title" content="{{ title }}" />
+		<meta property="og:description" content="{% if excerpt %}{{ excerpt}}{% else %}domain.com - {{ title }}{% endif %}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://domain.com/" />
+
+		<meta itemprop="name" content="{{ title }}">
+		<meta itemprop="description" content="{% if excerpt %}{{ excerpt}}{% else %}domain.com - {{ title }}{% endif %}">
+	</head>
+	<body>
+
+        {{ content | safe }}
+
+	</body>
+</html>
