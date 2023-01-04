@@ -1,0 +1,5 @@
+- name: Build
+  uses: TartanLlama/actions-eleventy@v1.3
+  with:
+    args: --output _site
+    install_dependencies: true
