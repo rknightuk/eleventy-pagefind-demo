@@ -1,6 +1,8 @@
 const { execSync } = require('child_process')
 
 module.exports = function(eleventyConfig) {
+    eleventyConfig.addPassthroughCopy("assets")
+
     eleventyConfig.addCollection("posts", function(collection) {
         return collection.getFilteredByGlob("posts/**/*.md")
     })
